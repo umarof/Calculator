@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/topPanel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#a6a6a6"
+        android:orientation="vertical"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+    <!--    1st Layer -->
+
+    <TextView
+        android:id="@+id/sqrtBtn"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="√"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/piBtn"
+        app:layout_constraintTop_toBottomOf="@id/topPanel" />
+
+
+    <TextView
+        android:id="@+id/piBtn"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="π"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toRightOf="@+id/sqrtBtn"
+        app:layout_constraintRight_toLeftOf="@+id/power"
+        app:layout_constraintTop_toTopOf="@+id/sqrtBtn" />
+
+    <TextView
+        android:id="@+id/power"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="^"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toRightOf="@id/piBtn"
+        app:layout_constraintRight_toLeftOf="@id/notBtn"
+        app:layout_constraintTop_toTopOf="@id/sqrtBtn" />
+
+    <TextView
+        android:id="@+id/notBtn"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:text="!"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toRightOf="@+id/power"
+        app:layout_constraintRight_toLeftOf="@id/downArrow"
+        app:layout_constraintTop_toTopOf="@id/sqrtBtn" />
+
+    <ImageView
+        android:id="@+id/downArrow"
+        android:layout_width="53dp"
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:src="@drawable/baseline_keyboard_arrow_down_24"
+        app:layout_constraintLeft_toRightOf="@id/notBtn"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sqrtBtn" />
+
+
+    <!--  2nd Layer  -->
+
+    <TextView
+        android:id="@+id/clearBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/clear_btn_bg"
+        android:gravity="center"
+        android:text="AC"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/bracketBtn"
+        app:layout_constraintTop_toBottomOf="@id/sqrtBtn"
+
+        />
+
+    <TextView
+        android:id="@+id/bracketBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/operator_btn_bg"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="( )"
+        android:textSize="35dp"
+        app:layout_constraintLeft_toRightOf="@id/clearBtn"
+        app:layout_constraintRight_toLeftOf="@+id/modulusBtn"
+        app:layout_constraintTop_toTopOf="@id/clearBtn" />
+
+    <TextView
+        android:id="@+id/modulusBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/operator_btn_bg"
+        android:gravity="center"
+        android:text="%"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toRightOf="@id/bracketBtn"
+        app:layout_constraintTop_toTopOf="@id/clearBtn"
+        app:layout_constraintRight_toLeftOf="@id/divisionBtn"/>
+
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/operator_btn_bg"
+        android:gravity="center"
+        android:text="÷"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toRightOf="@id/modulusBtn"
+        app:layout_constraintTop_toTopOf="@id/clearBtn"
+        android:id="@+id/divisionBtn"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
