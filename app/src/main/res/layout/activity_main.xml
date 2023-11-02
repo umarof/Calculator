@@ -11,12 +11,34 @@
         android:id="@+id/topPanel"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#a6a6a6"
+        android:background="@drawable/top_panel_bg"
+        android:gravity="right|bottom"
         android:orientation="vertical"
-        app:layout_constraintDimensionRatio="2:1"
+        android:paddingRight="30dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintDimensionRatio="3:1.4"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45x7"
+            android:id="@+id/expressionTextView"
+            android:textColor="#0d0d0d"
+            android:textSize="36sp"
+            android:textStyle="normal" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#0d0d0d"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            tools:text="360" />
+
 
     </LinearLayout>
 
@@ -26,7 +48,7 @@
         android:id="@+id/sqrtBtn"
         android:layout_width="53dp"
         android:layout_height="37dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:gravity="center"
         android:text="√"
         android:textSize="30sp"
@@ -50,6 +72,7 @@
         android:id="@+id/power"
         android:layout_width="53dp"
         android:layout_height="37dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:text="^"
         android:textSize="30sp"
@@ -85,7 +108,9 @@
         android:id="@+id/clearBtn"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:background="@drawable/clear_btn_bg"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/clear_btn_bg_selector"
+        android:clickable="true"
         android:gravity="center"
         android:text="AC"
         android:textSize="35sp"
@@ -117,10 +142,11 @@
         android:text="%"
         android:textSize="35sp"
         app:layout_constraintLeft_toRightOf="@id/bracketBtn"
-        app:layout_constraintTop_toTopOf="@id/clearBtn"
-        app:layout_constraintRight_toLeftOf="@id/divisionBtn"/>
+        app:layout_constraintRight_toLeftOf="@id/divisionBtn"
+        app:layout_constraintTop_toTopOf="@id/clearBtn" />
 
     <TextView
+        android:id="@+id/divisionBtn"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:background="@drawable/operator_btn_bg"
@@ -128,10 +154,216 @@
         android:text="÷"
         android:textSize="35sp"
         app:layout_constraintLeft_toRightOf="@id/modulusBtn"
-        app:layout_constraintTop_toTopOf="@id/clearBtn"
-        android:id="@+id/divisionBtn"
         app:layout_constraintRight_toRightOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="@id/clearBtn" />
+
+
+    <!--  3rd Layer  -->
+
+    <TextView
+        android:id="@+id/sevenBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/number_btn_bg"
+        android:gravity="center"
+        android:text="7"
+        android:onClick="numberClicked"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/eightBtn"
+        app:layout_constraintTop_toBottomOf="@id/clearBtn" />
+
+    <TextView
+        android:id="@+id/eightBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/number_btn_bg"
+        android:gravity="center"
+        android:text="8"
+        android:onClick="numberClicked"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toRightOf="@id/sevenBtn"
+        app:layout_constraintRight_toLeftOf="@id/nineBtn"
+        app:layout_constraintTop_toTopOf="@id/sevenBtn" />
+
+    <TextView
+        android:id="@+id/nineBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/number_btn_bg"
+        android:gravity="center"
+        android:text="9"
+        android:onClick="numberClicked"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toRightOf="@id/eightBtn"
+        app:layout_constraintRight_toLeftOf="@id/multiplyBtn"
+        app:layout_constraintTop_toTopOf="@id/sevenBtn" />
+
+    <TextView
+        android:id="@+id/multiplyBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/operator_btn_bg"
+        android:gravity="center"
+        android:text="X"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toRightOf="@id/nineBtn"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sevenBtn" />
+
+
+    <!--  4th Layer  -->
+
+    <TextView
+        android:id="@+id/fourBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/number_btn_bg"
+        android:gravity="center"
+        android:text="4"
+        android:onClick="numberClicked"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/fiveBtn"
+        app:layout_constraintTop_toBottomOf="@id/sevenBtn" />
+
+    <TextView
+        android:id="@+id/fiveBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/number_btn_bg"
+        android:gravity="center"
+        android:text="5"
+        android:onClick="numberClicked"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toRightOf="@id/fourBtn"
+        app:layout_constraintRight_toLeftOf="@id/sixBtn"
+        app:layout_constraintTop_toTopOf="@id/fourBtn" />
+
+    <TextView
+        android:id="@+id/sixBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/number_btn_bg"
+        android:gravity="center"
+        android:text="6"
+        android:onClick="numberClicked"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toRightOf="@id/fiveBtn"
+        app:layout_constraintRight_toLeftOf="@id/minus"
+        app:layout_constraintTop_toTopOf="@id/fourBtn" />
+
+    <TextView
+        android:id="@+id/minus"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/operator_btn_bg"
+        android:gravity="center"
+        android:text="-"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toRightOf="@id/sixBtn"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/fourBtn" />
+
+
+    <!--    5th Layer  -->
+
+    <TextView
+        android:id="@+id/oneBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/number_btn_bg"
+        android:gravity="center"
+        android:text="1"
+        android:onClick="numberClicked"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/twoBtn"
+        app:layout_constraintTop_toBottomOf="@id/fourBtn" />
+
+    <TextView
+        android:id="@+id/twoBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/number_btn_bg"
+        android:gravity="center"
+        android:text="2"
+        android:onClick="numberClicked"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toRightOf="@id/oneBtn"
+        app:layout_constraintRight_toLeftOf="@id/threeBtn"
+        app:layout_constraintTop_toTopOf="@id/oneBtn" />
+
+    <TextView
+        android:id="@+id/threeBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/number_btn_bg"
+        android:gravity="center"
+        android:text="3"
+        android:onClick="numberClicked"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toRightOf="@id/twoBtn"
+        app:layout_constraintRight_toLeftOf="@id/plusBtn"
+        app:layout_constraintTop_toTopOf="@id/oneBtn" />
+
+    <TextView
+        android:id="@+id/plusBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/operator_btn_bg"
+        android:gravity="center"
+        android:text="+"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toRightOf="@id/threeBtn"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/oneBtn" />
+
+
+    <!--    6th Layer  -->
+
+    <TextView
+        android:id="@+id/zeroBtn"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/number_btn_bg_shape"
+        android:gravity="center"
+        android:text="0"
+        android:onClick="numberClicked"
+        android:textSize="35sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/commaBtn"
+        app:layout_constraintTop_toBottomOf="@id/oneBtn" />
+
+    <TextView
+        android:id="@+id/commaBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/number_btn_bg"
+        android:gravity="center"
+        android:text=","
+        android:onClick="numberClicked"
+        android:textSize="40sp"
+        app:layout_constraintLeft_toRightOf="@id/zeroBtn"
+        app:layout_constraintRight_toLeftOf="@id/equalBtn"
+        app:layout_constraintTop_toTopOf="@id/zeroBtn" />
+
+
+    <TextView
+        android:id="@+id/equalBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/operator_btn_bg"
+        android:gravity="center"
+        android:text="="
+        android:textSize="35sp"
+        app:layout_constraintLeft_toRightOf="@id/commaBtn"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/zeroBtn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
