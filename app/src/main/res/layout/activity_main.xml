@@ -24,8 +24,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="45x7"
-            android:id="@+id/expressionTextView"
+            android:text=""
+            android:hint="0"
+            android:id="@+id/taskTextView"
             android:textColor="#0d0d0d"
             android:textSize="36sp"
             android:textStyle="normal" />
@@ -37,7 +38,9 @@
             android:textColor="#0d0d0d"
             android:textSize="20sp"
             android:textStyle="normal"
-            tools:text="360" />
+            tools:text=""
+            android:id="@+id/taskTextView2"
+            />
 
 
     </LinearLayout>
@@ -113,6 +116,7 @@
         android:clickable="true"
         android:gravity="center"
         android:text="AC"
+        android:onClick="clearClicked"
         android:textSize="35sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/bracketBtn"
@@ -140,6 +144,7 @@
         android:background="@drawable/operator_btn_bg"
         android:gravity="center"
         android:text="%"
+        android:onClick="operatorClicked"
         android:textSize="35sp"
         app:layout_constraintLeft_toRightOf="@id/bracketBtn"
         app:layout_constraintRight_toLeftOf="@id/divisionBtn"
@@ -151,7 +156,8 @@
         android:layout_height="70dp"
         android:background="@drawable/operator_btn_bg"
         android:gravity="center"
-        android:text="÷"
+        android:text="/"
+        android:onClick="operatorClicked"
         android:textSize="35sp"
         app:layout_constraintLeft_toRightOf="@id/modulusBtn"
         app:layout_constraintRight_toRightOf="parent"
@@ -206,7 +212,8 @@
         android:layout_height="70dp"
         android:background="@drawable/operator_btn_bg"
         android:gravity="center"
-        android:text="X"
+        android:text="x"
+        android:onClick="operatorClicked"
         android:textSize="35sp"
         app:layout_constraintLeft_toRightOf="@id/nineBtn"
         app:layout_constraintRight_toRightOf="parent"
@@ -262,6 +269,7 @@
         android:background="@drawable/operator_btn_bg"
         android:gravity="center"
         android:text="-"
+        android:onClick="operatorClicked"
         android:textSize="35sp"
         app:layout_constraintLeft_toRightOf="@id/sixBtn"
         app:layout_constraintRight_toRightOf="parent"
@@ -317,6 +325,7 @@
         android:background="@drawable/operator_btn_bg"
         android:gravity="center"
         android:text="+"
+        android:onClick="operatorClicked"
         android:textSize="35sp"
         app:layout_constraintLeft_toRightOf="@id/threeBtn"
         app:layout_constraintRight_toRightOf="parent"
@@ -360,6 +369,7 @@
         android:background="@drawable/operator_btn_bg"
         android:gravity="center"
         android:text="="
+        android:onClick="equalClick"
         android:textSize="35sp"
         app:layout_constraintLeft_toRightOf="@id/commaBtn"
         app:layout_constraintRight_toRightOf="parent"
